@@ -62,7 +62,9 @@ $logged_in = !empty($_SESSION['logged_in']);
         <h2>Listen. Download. Be encouraged.</h2>
         <p>Find recent sermons, play them in the browser or download to listen later.</p>
         <?php if ($msg): ?>
-          <div class="note" style="margin-top:12px;background:#05250a;padding:8px;border-radius:6px;color:#bdebb0;">"><?php echo $msg; ?></div>
+          <div class="note" style="margin-top:12px;background:#05250a;padding:8px;border-radius:6px;color:#bdebb0;">
+            <?php echo $msg; ?>
+          </div>
         <?php endif; ?>
       </div>
       <div class="player-card">
