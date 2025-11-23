@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LifeWay — Sermons</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">LifeWay — Sermons</h1>
+      <nav class="nav">
+        <a href="#playlist">Playlist</a>
+        <a href="#upload">Upload</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Listen. Download. Be encouraged.</h2>
+        <p>Find recent sermons, play them in the browser or download to listen later.</p>
+      </div>
+      <div class="player-card">
+        <div id="current-info">
+          <div class="cover" id="cover">LW</div>
+          <div>
+            <div id="title">Select a sermon</div>
+            <div id="artist">LifeWay Charismatic Church</div>
+          </div>
+        </div>
+        <audio id="audio" controls preload="none"></audio>
+      </div>
+    </section>
+
+    <section id="playlist" class="playlist">
+      <h3>Playlist</h3>
+      <ul id="tracks">
+        <!-- Example items. Replace or let server-side generate a list. -->
+        <li data-src="sermons/example-sermon-1.mp3" data-title="Example Sermon 1">Example Sermon 1 <a href="sermons/example-sermon-1.mp3" download>Download</a></li>
+        <li data-src="sermons/example-sermon-2.mp3" data-title="Example Sermon 2">Example Sermon 2 <a href="sermons/example-sermon-2.mp3" download>Download</a></li>
+      </ul>
+    </section>
+
+    <section id="upload" class="upload">
+      <h3>Upload Sermon</h3>
+      <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="sermon">Choose mp3/m4a file</label>
+        <input type="file" id="sermon" name="sermon" accept="audio/*" required>
+        <label for="title">Title (optional)</label>
+        <input type="text" id="title" name="title" placeholder="Sermon title">
+        <button type="submit">Upload</button>
+      </form>
+      <div id="uploadResult" class="result" aria-live="polite"></div>
+      <p class="note">Files are stored in the /sermons folder. Keep uploads to audio files only.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© LifeWay Charismatic Church</div>
+  </footer>
+
+  <script src="assets/player.js"></script>
+</body>
+</html>
